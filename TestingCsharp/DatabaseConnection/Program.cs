@@ -29,6 +29,64 @@ namespace DatabaseConnection
                 Console.WriteLine("cannot open database !" + ex.Message);
 
             }
+
+            OleDbCommand cmd = connect.CreateCommand();
+
+
+            string sql = "SELECT * FROM Client ";
+            cmd.CommandText = sql;
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+
+                Console.WriteLine("There is data");
+            }
+            else {
+                Console.WriteLine("No Data");
+            }
+
+
+
+            do
+            {
+                string nom = (string)reader["Nom"];
+                string prenom = (string)reader["Prenom"];
+                string adresse = (string)reader["Adresse"];
+                int clientNPA = (int)reader["clientNPA"];
+                Console.WriteLine("{0} , {1}\n adresse:{2}, {3} ", nom, prenom, adresse, clientNPA);
+
+            } while (reader.Read());
+            reader.Close();
+            // NOW WITH PARAMETERS
+
+
+            sql = "INSERT INTO FemmeChambre (NomFemme) VALUES (@nom)";
+            cmd.CommandText = sql;
+
+            string nomF = "Paula";
+            OleDbParameter paramNom = new OleDbParameter("@nom", nomF);
+            cmd.Parameters.Add(paramNom);
+
+
+            int n = cmd.ExecuteNonQuery();
+            Console.WriteLine("record:" + n);
+
+            sql = "SELECT * FROM FemmeChambre";
+            cmd.CommandText = sql;
+            reader = cmd.ExecuteReader();
+            
+
+            while (reader.Read()) {
+                string nomFemme = (string)reader["NomFemme"];
+                int codeFemme = (int)reader["CodeFemmeChambre"];
+                Console.WriteLine("{0} , {1} ", nomFemme, codeFemme);
+            }
+            
+           
+
+
+
             Console.ReadLine();
             connect.Close();
         }
