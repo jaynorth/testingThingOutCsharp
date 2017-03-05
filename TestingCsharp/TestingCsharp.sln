@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transtypage", "transtypage\transtypage.csproj", "{9659F44E-2637-4C31-B55C-0CBDFD0ED07D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConnection", "DatabaseConnection\DatabaseConnection.csproj", "{67629CE8-6307-42C5-B881-F929D6A3E0BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9659F44E-2637-4C31-B55C-0CBDFD0ED07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9659F44E-2637-4C31-B55C-0CBDFD0ED07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9659F44E-2637-4C31-B55C-0CBDFD0ED07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67629CE8-6307-42C5-B881-F929D6A3E0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67629CE8-6307-42C5-B881-F929D6A3E0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67629CE8-6307-42C5-B881-F929D6A3E0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67629CE8-6307-42C5-B881-F929D6A3E0BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
