@@ -87,8 +87,25 @@ namespace DatabaseConnection
 
 
 
-            Console.ReadLine();
+           
             connect.Close();
+
+
+            /////USING DataSet
+
+            OleDbDataAdapter adapteur = new OleDbDataAdapter();
+            OleDbCommand commande = connect.CreateCommand();
+            commande.CommandText = "SELECT * FROM Listechambre";
+            adapteur.SelectCommand = commande;
+
+            DataSet1 ds = new DataSet1();
+            adapteur.Fill(ds, "Chambres");
+            int nbLignes = adapteur.Fill(ds);
+            Console.WriteLine("Nombre lignes: " + nbLignes);
+            
+
+            Console.ReadKey();
+
         }
     }
 }
